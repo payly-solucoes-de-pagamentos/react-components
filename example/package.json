@@ -15,6 +15,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "storybook": "start-storybook",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.0.11"
   }
 }
