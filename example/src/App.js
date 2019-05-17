@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'payly-components-js'
+import {Modal} from 'payly-components'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Modal active ContentComponent={() =>(<p>Testezinho</p>)} />
       </div>
     )
   }
