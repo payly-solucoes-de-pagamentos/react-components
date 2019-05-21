@@ -4,6 +4,6 @@
       "modules": false
     }],
     "stage-0",
-    "babel-preset-react"
+    "react"
   ]
 }
