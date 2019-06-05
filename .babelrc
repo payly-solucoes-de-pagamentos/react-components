@@ -1,9 +1,8 @@
 {
   "presets": [
-    ["env", {
-      "modules": false
-    }],
-    "stage-0",
-    "react"
-  ]
+    "@babel/react",
+    "minify",
+    ["@babel/env", {"modules": false}]
+  ],
+  "plugins": ["babel-plugin-styled-components"]
 }
