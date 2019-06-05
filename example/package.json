@@ -5,11 +5,12 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "payly-components": "^1.0.0",
+    "payly-components": "file:../",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^1.1.4",
+    "styled-components": "^4.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,6 +20,9 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.11"
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.6"
   }
 }
