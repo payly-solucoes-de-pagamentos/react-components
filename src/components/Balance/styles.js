@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { container, flexPosition, fontStyle } from "../../styles/mixins";
+import { flexPosition, fontStyle } from "../../styles/mixins";
 import { GRAY_DARKER } from "../../styles/variables";
-import { LoaderCircle } from "../../components/SentFeedback/style";
 
 export const BalanceContainer = styled.div`
   background-color: #fff;
