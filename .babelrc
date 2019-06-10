@@ -1,8 +1,8 @@
 {
-  "presets": [
-    "@babel/react",
-    "minify",
-    ["@babel/env", {"modules": false}]
-  ],
-  "plugins": ["babel-plugin-styled-components"]
+  "presets": ["@babel/react", "minify", ["@babel/env", { "modules": false }]],
+  "plugins": [
+    "babel-plugin-styled-components",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties"
+  ]
 }
