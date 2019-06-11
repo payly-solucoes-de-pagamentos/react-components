@@ -4,17 +4,12 @@ import PropTypes from "prop-types";
 import * as Styles from "./styles";
 
 const ModalComponent = React.memo(
-  ({ active, ContentComponent, width, height, onCloseModal }) => {
+  ({ active, children, width, height, onCloseModal }) => {
     const [isOpen, setIsOpen] = useState(active);
 
     useEffect(() => {
       setIsOpen(active);
     }, [active]);
-
-    const closeModal = () => {
-      setIsOpen(false);
-      onCloseModal && onCloseModal();
-    };
 
     const handleBgOverlayClick = e => {
       e.preventDefault();
@@ -31,7 +26,7 @@ const ModalComponent = React.memo(
         onClick={e => handleBgOverlayClick(e)}
       >
         <Styles.ModalContainer width={width} height={height}>
-          {ContentComponent && <ContentComponent closeModal={closeModal} />}
+          {children}
         </Styles.ModalContainer>
       </Styles.BackgroundOverlay>
     );
@@ -42,7 +37,7 @@ ModalComponent.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   active: PropTypes.bool,
-  ContentComponent: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.element, PropTypes.bool]),
   onCloseModal: PropTypes.oneOfType([PropTypes.func, PropTypes.bool])
 };
 
@@ -50,7 +45,7 @@ ModalComponent.defaultProps = {
   active: false,
   width: "420px",
   height: "320px",
-  ContentComponent: false,
+  children: false,
   onCloseModal: false
 };
 
