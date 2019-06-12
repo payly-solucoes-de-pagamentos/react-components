@@ -1,6 +1,6 @@
 {
   "name": "payly-components",
-  "version": "1.1.0",
+  "version": "0.0.0",
   "description": "",
   "author": "",
   "license": "MIT",
@@ -16,10 +16,11 @@
     "npm": ">=5"
   },
   "scripts": {
+    "start": "rollup -c -w",
     "test": "jest",
     "test:watch": "jest --watchAll",
+    "test:coverage": "jest --colors --coverage",
     "build": "rollup -c",
-    "start": "rollup -c -w",
     "show-config": "rollup --config",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
@@ -87,7 +88,21 @@
       "jest-enzyme",
       "<rootDir>src/setupTests.js"
     ],
-    "verbose": true
+    "verbose": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "statements": -10
+      }
+    },
+    "collectCoverageFrom": [
+      "src/components/**/*.{js, jsx}"
+    ],
+    "coveragePathIgnorePatterns" : [
+      "styles.js"
+    ],
+    "bail": 1
   },
   "files": [
     "dist"
