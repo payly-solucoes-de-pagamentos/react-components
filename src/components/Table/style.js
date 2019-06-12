@@ -1,5 +1,5 @@
-import Styled, { keyframes } from 'styled-components';
-import styled from 'styled-components';
+import Styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Container = Styled.div`
 
@@ -9,7 +9,7 @@ export const LoaderWrapper = Styled.div`
 `;
 
 export const CustomTable = Styled.table`
-  width: ${props => props.width || 'unset'};
+  width: ${props => props.width || "unset"};
   border-spacing: 0;
   table-layout: fixed;
   position: relative;
@@ -19,12 +19,12 @@ export const CustomTable = Styled.table`
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
     background: #fff;
   }
-`
+`;
 
 export const TableTitle = Styled.th`
-  cursor: ${props => props.isSortable && 'pointer'};
+  cursor: ${props => props.isSortable && "pointer"};
   background: transparent;
-  padding: ${props => props.padding || '12px 5px'};
+  padding: ${props => props.padding || "12px 5px"};
   text-align: left;
   color: #a0a0a0;
   font-family: OpenSans, sans-serif;
@@ -46,17 +46,17 @@ export const TableTitle = Styled.th`
   }
 
   :hover {
-    color: ${ props => props.isSortable && props.theme.global.main.colorAction};
+    color: ${props => props.isSortable && props.theme.global.main.colorAction};
 
     & .sortIndicator g {
-      fill: ${ props => props.isSortable && props.theme.global.main.colorAction};
+      fill: ${props => props.isSortable && props.theme.global.main.colorAction};
     }
 
   }
 `;
 
 export const TableHead = Styled.thead`
-  display: ${props => props.show ? '' : 'none'};
+  display: ${props => (props.show ? "" : "none")};
 `;
 
 export const TableBody = Styled.tbody`
@@ -88,14 +88,14 @@ export const TableRow = Styled.tr`
   }
 
   &:nth-child(2n) {
-    ${props => props.striped && 'background: #f5f5f5'};
+    ${props => props.striped && "background: #f5f5f5"};
   }
 `;
 
 export const TableCell = Styled.td`
-  width: ${props => props.width || 'auto'};
+  width: ${props => props.width || "auto"};
   padding: 15px 5px;
-  text-align: ${ props => props.textAlign || 'left'};
+  text-align: ${props => props.textAlign || "left"};
   color: #4a4a4a;
   font-family: OpenSans, sans-serif;
   font-size: 12px;
@@ -112,7 +112,7 @@ export const LoadingTableContent = Styled.tbody`
   bottom:0;
   border-radius: 3px;
   width: 100%;
-  height: calc(100% - ${ props => props.hasHeader ? '42px' : '0px'});
+  height: calc(100% - ${props => (props.hasHeader ? "42px" : "0px")});
   z-index: 10003;
   display: flex;
   justify-content: center;
@@ -131,7 +131,7 @@ export const LoadingTableContent = Styled.tbody`
     text-align: center;
     color: #333333;
   }
-`
+`;
 
 export const DefaultEmptyTableCell = Styled.td`
   padding: 32px;
@@ -139,4 +139,4 @@ export const DefaultEmptyTableCell = Styled.td`
   :hover {
     background: #fff;
   }
-`
+`;
