@@ -1,8 +1,0 @@
-{
-  "presets": [
-    "@babel/react",
-    "minify",
-    ["@babel/env", {"modules": false}]
-  ],
-  "plugins": ["babel-plugin-styled-components"]
-}
