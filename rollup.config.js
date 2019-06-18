@@ -34,6 +34,13 @@ export default {
     babel({
       exclude: "node_modules/**"
     }),
-    commonjs()
+    commonjs({
+      namedExports: {
+        "node_modules/react-dates/index.js": [
+          "DateRangePicker",
+          "SingleDatePicker"
+        ]
+      }
+    })
   ]
 };
