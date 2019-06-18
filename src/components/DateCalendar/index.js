@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { SingleDatePicker, isInclusivelyAfterDay } from 'react-dates';
-import momentPropTypes from 'react-moment-proptypes';
-import { GRAY_MEDIUM } from '../../styles/variables';
-import DaysOfWeek from './daysOfWeek';
-import IconCalendar from '../Icons/calendar';
-import 'moment/locale/pt-br';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import * as Styled from './style';
+import React from "react";
+import PropTypes from "prop-types";
+import { SingleDatePicker } from "react-dates";
+import momentPropTypes from "react-moment-proptypes";
+import { GRAY_MEDIUM } from "../../styles/variables";
+import DaysOfWeek from "./daysOfWeek";
+import IconCalendar from "../Icons/calendar";
+import "moment/locale/pt-br";
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+import * as Styled from "./style";
 
 const DateCalendar = ({
   onChange,
   weekDaysPosition,
   startDate,
   startDateId,
-  endDate,
   onFocus,
   focusedInput,
   onSelectDay,
@@ -28,52 +27,49 @@ const DateCalendar = ({
   width,
   openDirection,
   isOutsideRange,
-  readOnly,
+  readOnly
 }) => (
-    <Styled.DateCalendarWrapper weekDaysPosition={weekDaysPosition}>
-      <Styled.CustomReactDatesStyle width={width} disabled={disabled}>
-        <Styled.DatePickerContainer error={errors && errors[startDateId]}>
-          <Styled.Label>{label}</Styled.Label>
-          <SingleDatePicker
-            openDirection="up"
-            date={startDate}
-            id={startDateId}
-            placeholder={placeholder}
-            onDateChange={date => onChange({ type: startDateId, date })}
-            focused={focusedInput === startDateId}
-            onFocusChange={() => onFocus(startDateId)}
-            numberOfMonths={1}
-            hideKeyboardShortcutsPanel={true}
-            customInputIcon={<IconCalendar color={disabled ? GRAY_MEDIUM : ''} />}
-            isOutsideRange={day => endDate && isInclusivelyAfterDay(day, endDate)}
-            onClose={() => onFocus(null)}
-            disabled={disabled}
-            openDirection={openDirection}
-            isOutsideRange={isOutsideRange}
-            readOnly={readOnly}
-          />
-        </Styled.DatePickerContainer>
-      </Styled.CustomReactDatesStyle>
-      {hasWeekDays &&
-        <DaysOfWeek
-          error={errors && errors.daysOfWeek}
+  <Styled.DateCalendarWrapper weekDaysPosition={weekDaysPosition}>
+    <Styled.CustomReactDatesStyle width={width} disabled={disabled}>
+      <Styled.DatePickerContainer error={errors && errors[startDateId]}>
+        <Styled.Label>{label}</Styled.Label>
+        <SingleDatePicker
+          date={startDate}
+          id={startDateId}
+          placeholder={placeholder}
+          onDateChange={date => onChange({ type: startDateId, date })}
+          focused={focusedInput === startDateId}
+          onFocusChange={() => onFocus(startDateId)}
+          numberOfMonths={1}
+          hideKeyboardShortcutsPanel
+          customInputIcon={<IconCalendar color={disabled ? GRAY_MEDIUM : ""} />}
+          onClose={() => onFocus(null)}
           disabled={disabled}
-          onSelect={onSelectDay}
-          active={activeDays} />
-      }
-    </Styled.DateCalendarWrapper>
-  );
-
+          openDirection={openDirection}
+          isOutsideRange={isOutsideRange}
+          readOnly={readOnly}
+        />
+      </Styled.DatePickerContainer>
+    </Styled.CustomReactDatesStyle>
+    {hasWeekDays && (
+      <DaysOfWeek
+        error={errors && errors.daysOfWeek}
+        disabled={disabled}
+        onSelect={onSelectDay}
+        active={activeDays}
+      />
+    )}
+  </Styled.DateCalendarWrapper>
+);
 
 DateCalendar.propTypes = {
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func.isRequired,
+  startDateId: PropTypes.string.isRequired,
+  focusedInput: PropTypes.any.isRequired,
+  startDate: momentPropTypes.momentObj.isRequired,
   readOnly: PropTypes.bool,
-  startDate: momentPropTypes.momentObj,
-  startDateId: PropTypes.string,
-  endDate: PropTypes.any,
-  endDateId: PropTypes.string,
-  focusedInput: PropTypes.any,
+  endDate: momentPropTypes.momentObj,
   onSelectDay: PropTypes.func,
   activeDays: PropTypes.array,
   hasWeekDays: PropTypes.bool,
@@ -84,23 +80,24 @@ DateCalendar.propTypes = {
   placeholder: PropTypes.string,
   width: PropTypes.string,
   openDirection: PropTypes.string,
-  isOutsideRange: PropTypes.func,
+  isOutsideRange: PropTypes.func
 };
 
 DateCalendar.defaultProps = {
-  startDateId: 'inp-start-date-id',
-  endDateId: 'inp-end-date-id',
-  focusedInput: null,
+  startDateId: "inp-start-date-id",
   activeDays: [],
   hasWeekDays: true,
   disabled: false,
-  errors: {},
-  weekDaysPosition: 'right',
-  label: '',
-  placeholder: 'Selecione um dia',
-  width: '150px',
+  errors: null,
+  weekDaysPosition: "right",
+  label: "",
+  placeholder: "Selecione um dia",
+  width: "150px",
   isOutsideRange: () => false,
   readOnly: true,
-}
+  openDirection: "up",
+  endDate: null,
+  onSelectDay: () => {}
+};
 
 export default DateCalendar;
