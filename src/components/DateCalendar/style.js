@@ -1,14 +1,26 @@
-import styled from 'styled-components';
-import { GRAY_DARKER, GRAY_MEDIUM, GRAY_LIGHTER, BORDER_RADIUS, DANGER_COLOR, FONT_SIZE_5 } from '../../styles/variables';
-import { flexPosition, fontStyle } from '../../styles/mixins';
+import styled from "styled-components";
+import {
+  GRAY_DARKER,
+  GRAY_MEDIUM,
+  GRAY_LIGHTER,
+  BORDER_RADIUS,
+  DANGER_COLOR,
+  FONT_SIZE_5
+} from "../../styles/variables";
+import { flexPosition, fontStyle } from "../../styles/mixins";
+import theme from "../../styles/theme";
 
 export const DateCalendarWrapper = styled.div`
   margin-right: 40px;
-  ${flexPosition('center', 'space-between')}
-  ${props => props.weekDaysPosition === 'right' && `
+  ${flexPosition("center", "space-between")}
+  ${props =>
+    props.weekDaysPosition === "right" &&
+    `
     flex-direction: row;
   `}
-  ${props => props.weekDaysPosition === 'left' && `
+  ${props =>
+    props.weekDaysPosition === "left" &&
+    `
     flex-direction: row-reverse;
     > div {
       div &:last-of-type {
@@ -16,7 +28,9 @@ export const DateCalendarWrapper = styled.div`
       }
     }
   `}
-  ${props => props.weekDaysPosition === 'up' && `
+  ${props =>
+    props.weekDaysPosition === "up" &&
+    `
     flex-direction: column-reverse;
     align-items: start;
     > div {
@@ -25,7 +39,9 @@ export const DateCalendarWrapper = styled.div`
       }
     }
   `}
-  ${props => props.weekDaysPosition === 'down' && `
+  ${props =>
+    props.weekDaysPosition === "down" &&
+    `
     flex-direction: column;
     align-items: start;
     > div {
@@ -37,39 +53,36 @@ export const DateCalendarWrapper = styled.div`
 `;
 
 export const CustomReactDatesStyle = styled.div`
-${flexPosition('center')}
+  ${flexPosition("center")}
   .SingleDatePickerInput__withBorder {
-    border: 1px solid ${props => props.disabled ? GRAY_MEDIUM : GRAY_LIGHTER};
+    border: 1px solid ${props => (props.disabled ? GRAY_MEDIUM : GRAY_LIGHTER)};
     border-radius: ${BORDER_RADIUS};
     padding: 1px;
     display: flex;
-    width: ${ props => props.width};
-    height:45px;
+    width: ${props => props.width};
+    height: 45px;
     overflow: hidden;
   }
-
 
   .DateInput {
     display: flex;
     align-items: center;
     .DateInput_input {
-      font-family: ${props => props.theme.global.main.fontNormal};
+      font-family: ${theme.text.fontFamily};
       padding: 0px 9px;
 
-
-      ${props => fontStyle(
-        props.disabled ? GRAY_MEDIUM : GRAY_DARKER,
-        FONT_SIZE_5,
-        'normal',
-      )}
+      ${props =>
+        fontStyle(
+          props.disabled ? GRAY_MEDIUM : GRAY_DARKER,
+          FONT_SIZE_5,
+          "normal"
+        )}
     }
 
     .DateInput_input__focused {
       border-bottom: none;
     }
   }
-
-
 
   .SingleDatePickerInput_calendarIcon {
     padding: 0px;
@@ -79,10 +92,14 @@ ${flexPosition('center')}
     align-items: center;
   }
 
-  .CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
-    color: ${props => props.disabled ? GRAY_MEDIUM : '#FFF'};
-    background-color: ${props => props.disabled ? 'transparent' : props.theme.global.main.colorAction};
-    border-color: ${props => props.disabled ? GRAY_MEDIUM : props.theme.global.main.colorAction};
+  .CalendarDay__selected,
+  .CalendarDay__selected:active,
+  .CalendarDay__selected:hover {
+    color: ${props => (props.disabled ? GRAY_MEDIUM : "#FFF")};
+    background-color: ${props =>
+      props.disabled ? "transparent" : theme.secondColor};
+    border-color: ${props =>
+      props.disabled ? GRAY_MEDIUM : theme.secondColor};
   }
 
   .SingleDatePicker {
@@ -91,19 +108,20 @@ ${flexPosition('center')}
 `;
 
 export const DatePickerContainer = styled.div`
-  ${props => props.error && (`
+  ${props =>
+    props.error &&
+    `
     .SingleDatePickerInput__withBorder {
       border: 1px solid ${DANGER_COLOR};
     }
-  `)}
+  `}
 `;
 
 export const Label = styled.label`
-  color: ${props => props.theme.global.main.colorFontNormal};
-  font-family: ${props => props.theme.global.main.fontNormal};
+  color: ${theme.text.mainColor};
+  font-family: ${theme.text.fontFamily};
   font-weight: 600;
   font-size: 13px;
-  padding-bottom:10px;
-  display:block;
+  padding-bottom: 10px;
+  display: block;
 `;
-
