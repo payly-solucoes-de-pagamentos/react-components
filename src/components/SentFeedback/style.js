@@ -1,4 +1,5 @@
-import Styled, { keyframes } from 'styled-components';
+import Styled, { keyframes } from "styled-components";
+import theme from "../../styles/theme";
 
 const materialPacman = keyframes`
   50% {
@@ -24,7 +25,7 @@ const buildError = keyframes`
     fill: #D0021B;
     stroke-dashoffset: 0px;
   }
-`
+`;
 
 const buildSuccess = keyframes`
   50% {
@@ -33,18 +34,18 @@ const buildSuccess = keyframes`
     fill: #4FA444;
     stroke-dashoffset: 0px;
   }
-`
+`;
 
 export const OutsideCircle = Styled.circle`
   fill: transparent;
-  stroke: ${props => props.stroke || props.theme.global.main.colorAction};
+  stroke: ${props => props.stroke || theme.secondColor};
   `;
 
 export const LoaderCircle = Styled(OutsideCircle)`
   transform-origin: 45px 45px;
   stroke-dasharray: 10px, 255px;
   stroke-width: ${props => props.strokeWidth};
-  stroke: ${props => props.stroke || props.theme.global.main.colorAction};
+  stroke: ${props => props.stroke || theme.secondColor};
   animation: ${materialPacman} 2.5s ease forwards infinite, ${rotateAnimation} 2.5s linear forwards infinite;
 `;
 
@@ -69,4 +70,3 @@ export const StyledSuccessGroup = Styled.g`
     animation: ${buildSuccess} 2s linear forwards ;
   }
 `;
-
