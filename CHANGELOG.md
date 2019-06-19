@@ -6,9 +6,19 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+## [0.0.1-beta]
+###Added
+  - Balance component;
+###Fix
+  - Resolve theme bugs
+###Remove
+  - Remove story of react-dates at all
+
+
+##[0.0.0-beta.1]
 ### Added
- - New changelog to increment lib
- - Init Lib project
- - Increment Readme to show how to contribute with project and start application
- - Create suit of test
- - Create Storybook in example
+  - New changelog to increment lib
+  - Init Lib project
+  - Increment Readme to show how to contribute with project and start application
+  - Create suit of test
+  - Create Storybook in example

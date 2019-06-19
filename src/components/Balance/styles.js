@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { flexPosition, fontStyle } from "../../styles/mixins";
 import { GRAY_DARKER } from "../../styles/variables";
+import theme from "../../styles/theme";
 
 export const BalanceContainer = styled.div`
   background-color: #fff;
@@ -33,7 +34,7 @@ export const MiddleAlertIcon = styled.div`
 `;
 
 export const Label = styled.span`
-  font-family: ${props => props.theme.global.main.fontNormal};
+  font-family: ${theme.text.fontFamily};
   ${fontStyle(GRAY_DARKER, "13px", 600)}
   text-align: right;
   text-rendering: geometricPrecision;
@@ -41,7 +42,7 @@ export const Label = styled.span`
 
 export const Balance = styled.span`
   color: ${props => props.color};
-  font-family: ${props => props.theme.global.main.fontNormal};
+  font-family: ${theme.text.fontFamily};
   display: ${props => (props.show ? "block" : "none")};
   font-size: 26px;
   font-weight: normal;
@@ -54,7 +55,7 @@ export const Balance = styled.span`
 `;
 
 export const LoadingContainer = styled.div`
-  font-family: ${props => props.theme.global.main.fontNormal};
+  font-family: ${theme.text.fontFamily};
   font-size: 10px;
   font-weight: normal;
   font-style: normal;
