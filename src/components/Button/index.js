@@ -1,9 +1,19 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { MainButton, SecondaryButton, IconButton, FileButton, HiddenInput } from './style';
-import { GRAY_DARKER, GRAY_MEDIUM, FONT_SIZE_4, FONT_WEIGHT_BOLD } from '../../styles/variables';
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  MainButton,
+  SecondaryButton,
+  IconButton,
+  FileButton,
+  HiddenInput
+} from "./style";
+import {
+  GRAY_DARKER,
+  GRAY_MEDIUM,
+  FONT_WEIGHT_BOLD
+} from "../../styles/variables";
 
-const ButtonComponent = (props) => {
+const ButtonComponent = props => {
   const {
     bgColor,
     color,
@@ -19,19 +29,15 @@ const ButtonComponent = (props) => {
     height,
     isSecondary,
     children,
-    fileCharacteristic,
+    fileCharacteristic
   } = props;
 
   let Button;
   // If button must open input of files
   if (Object.keys(fileCharacteristic).length) {
-    Button = (props) => (
-      <FileButton
-        htmlFor={fileCharacteristic.id}
-        {...props}
-        type={undefined}
-      >
-        {icon && (<IconButton src={icon} />)}
+    Button = () => (
+      <FileButton htmlFor={fileCharacteristic.id} {...props} type={undefined}>
+        {icon && <IconButton src={icon} />}
         {children}
         <HiddenInput
           type="file"
@@ -40,11 +46,10 @@ const ButtonComponent = (props) => {
           name={fileCharacteristic.name}
           onChange={fileCharacteristic.onChange}
           accept={fileCharacteristic.accept}
-          disabled={props.disabled}
+          disabled={disabled}
         />
       </FileButton>
     );
-
   } else {
     // Choose between primary or secondary button
     Button = isSecondary ? SecondaryButton : MainButton;
@@ -64,16 +69,15 @@ const ButtonComponent = (props) => {
       height={height}
       onClick={onClick}
     >
-      {icon && (<IconButton src={icon} />)}
+      {icon && <IconButton src={icon} />}
       {children}
     </Button>
   );
 };
 
 ButtonComponent.propTypes = {
-  id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  children: PropTypes.any.isRequired,
+  children: PropTypes.any,
   type: PropTypes.string,
   outline: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -86,28 +90,24 @@ ButtonComponent.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   isSecondary: PropTypes.bool,
-  fileCharacteristic: PropTypes.object,
+  fileCharacteristic: PropTypes.object
 };
 
 ButtonComponent.defaultProps = {
-  id: '',
-  type: 'button',
-  children: '',
+  type: "button",
+  children: "",
   disabled: false,
   outline: false,
-  bgColor: 'transparent',
-  width: 'auto',
-  height: '50px',
+  bgColor: "transparent",
+  width: "auto",
+  height: "50px",
   color: GRAY_DARKER,
   borderColor: GRAY_MEDIUM,
   icon: null,
-  fontSize: '15px',
+  fontSize: "15px",
   fontWeight: FONT_WEIGHT_BOLD,
   isSecondary: false,
-  fileCharacteristic: {},
-  onClick: () => { },
+  fileCharacteristic: {}
 };
 
 export default ButtonComponent;
-
-
