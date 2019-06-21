@@ -10,12 +10,12 @@ export default {
     secondColor: "black",
     titleColor: "#808080"
   },
-  buttom: {
+  button: {
     radius: "50px",
     backgroundMain: "black",
     backgroundMainHover: "#ff4b69",
     colorFontMain: "#fff",
-    colorFontMainHover: "#ffffff",
+    colorFontMainHover: "#fff",
     backgroundSecondary: "#fff",
     backgroundSecondaryHover: "#ff4b69",
     colorFontSecondary: "#333333",
