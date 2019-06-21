@@ -14,10 +14,10 @@ describe("Button tests", () => {
     expect(wrapper.html()).toBe("Render");
   });
 
-  describe("Style", () => {
-    it(`It should have bancground color: ${theme.button.backgroundMain} when main`, () => {
-      const wrapper = mount(<Button>Render</Button>);
-      console.log(wrapper.render().get(0));
-    });
-  });
+  // describe("Style", () => {
+  //   it(`It should have bancground color: ${theme.button.backgroundMain} when main`, () => {
+  //     const wrapper = mount(<Button>Render</Button>);
+
+  //   });
+  // });
 });
