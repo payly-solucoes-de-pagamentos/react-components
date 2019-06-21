@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import theme from "../../styles/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -7,9 +8,9 @@ export const Container = styled.div`
 
 export const Label = styled.div`
   height: 24px;
-  background: ${ props => props.color };
-  width: ${ props => props.width };
-  color: #fff;
+  background: ${props => props.color};
+  width: ${props => props.width};
+  color: ${props => props.color || theme.text.mainColor};
   border-radius: 22.5px;
   display: flex;
   flex-direction: row;
@@ -43,4 +44,4 @@ export const DangerContainer = styled.div`
   & span {
     margin-left: 3px;
   }
-`
+`;

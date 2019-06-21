@@ -1,41 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as Styles from './styles';
-import AlertTriangle from '../../components/Icons/alert-triangle';
+import React from "react";
+import PropTypes from "prop-types";
+import * as Styles from "./styles";
+import AlertTriangle from "../Icons/alert-triangle";
 
-
-const renderDanger = (text) => {
+const renderDanger = text => {
   return (
     <Styles.DangerContainer>
       <AlertTriangle color="#d0021b" /> <span>{text}</span>
     </Styles.DangerContainer>
-  )
-}
+  );
+};
 
-const Label = ({ text, Icon, width, color, dangerText }) => {
+const Label = ({ children, Icon, IconColor, width, color, dangerText }) => {
   return (
     <Styles.Container>
       <Styles.Label width={width} color={color}>
         <Styles.IconContainer>
-          { Icon && <Icon color="#fff" size="12px" /> }
+          {Icon && <Icon color={IconColor} size="12px" />}
         </Styles.IconContainer>
-        {text}
+        {children}
       </Styles.Label>
-      { dangerText && renderDanger(dangerText) }
+      {dangerText && renderDanger(dangerText)}
     </Styles.Container>
   );
 };
 
 Label.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+  IconColor: PropTypes.string,
   dangerText: PropTypes.string,
   Icon: PropTypes.func,
   width: PropTypes.string,
-  color: PropTypes.string,
-}
+  color: PropTypes.string
+};
 
 Label.defaultProps = {
-  width: '100%',
-}
+  width: "100%"
+};
 
 export default Label;

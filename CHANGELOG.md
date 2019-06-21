@@ -6,6 +6,13 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 
 ## [0.1.1-beta]
 ### Added
+  - Label component
+  - Label tests
+### improvement
+  - Label compoent
+  - Danger icon
+## [0.1.1-beta]
+### Added
   - Button component
   - Theme to buttons
 ### fix
