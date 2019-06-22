@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import PropType from "prop-types";
 import * as Styled from "./style";
 import {
@@ -84,9 +84,9 @@ const Table = React.memo(
 );
 
 Table.propTypes = {
+  translateEnum: PropType.object.isRequired,
   data: PropType.arrayOf(PropType.object),
   striped: PropType.bool,
-  translateEnum: PropType.object.isRequired,
   ActionComponent: PropType.func,
   TableEmptyComponent: PropType.func,
   EmptyFilteredComponent: PropType.func,
@@ -100,7 +100,8 @@ Table.defaultProps = {
   data: [],
   striped: true,
   translateEnum: {},
-  filtered: false
+  filtered: false,
+  sorts: {}
 };
 
 export default Table;
