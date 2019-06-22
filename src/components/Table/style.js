@@ -1,6 +1,5 @@
-import Styled, { keyframes } from "styled-components";
-import styled from "styled-components";
-
+import Styled from "styled-components";
+import theme from "../../styles/theme";
 export const Container = Styled.div`
 
 `;
@@ -46,10 +45,10 @@ export const TableTitle = Styled.th`
   }
 
   :hover {
-    color: ${props => props.isSortable && props.theme.global.main.colorAction};
+    color: ${props => props.isSortable && theme.text.mainColor};
 
     & .sortIndicator g {
-      fill: ${props => props.isSortable && props.theme.global.main.colorAction};
+      fill: ${props => props.isSortable && theme.text.mainColor};
     }
 
   }
@@ -101,7 +100,7 @@ export const TableCell = Styled.td`
   font-size: 12px;
   border: 0px;
   font-weight: 600;
-  &:first-child {
+  &:first-child:not(:only-child) {
     padding-left: 30px;
   }
 `;

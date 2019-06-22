@@ -4,13 +4,28 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.1.1-beta]
+## [Unreleased]
+
+## [0.2.2-beta]
+### Added
+  - Add more stories of Table
+  - Storybook of table (partial)
+  - Mocks to see table
+### Changes
+  - Improvement of story of Table
+  - Change mocks to root
+  - Move storybook helpers to table mock
+### Removed
+  - Navbar from components
+
+## [0.2.1-beta]
 ### Added
   - Label component
   - Label tests
 ### improvement
   - Label compoent
   - Danger icon
+
 ## [0.1.1-beta]
 ### Added
   - Button component
@@ -18,6 +33,7 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 ### fix
   - Get back the tests of modal
   - Adjust theme of styles in button
+
 ## [0.0.1-beta]
 ### Added
   - Balance component;
@@ -25,7 +41,6 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
   - Resolve theme bugs
 ### Remove
   - Remove story of react-dates at all
-
 
 ##[0.0.0-beta.1]
 ### Added

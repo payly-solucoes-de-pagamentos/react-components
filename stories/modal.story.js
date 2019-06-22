@@ -7,7 +7,7 @@ const Pzinho = Styled.p`
   text-align: center;
 `;
 
-storiesOf("teste", module).add("testeDoAdd", () => (
+storiesOf("Modal", module).add("testeDoAdd", () => (
   <Modal active>
     <Pzinho>Modal 1</Pzinho>
   </Modal>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import * as Styled from "./style";
 import SentFeedback from "../SentFeedback";
 import { stringLimitator } from "../../helpers";
@@ -83,8 +83,8 @@ export const TableCell = ({ cell, index }) => {
       ) : typeof cell.value === "string" ? (
         stringLimitator(cell.value, 23)
       ) : (
-        cell.value
-      )}
+            cell.value
+          )}
     </Styled.TableCell>
   );
 };
@@ -109,8 +109,8 @@ export const emptyHolder = (TableEmptyComponent, headerSize) => {
         {TableEmptyComponent ? (
           <TableEmptyComponent />
         ) : (
-          "Nenhum registrado cadastrado."
-        )}
+            "Nenhum registro encontrado."
+          )}
       </Styled.DefaultEmptyTableCell>
     </Styled.TableRow>
   );
@@ -123,8 +123,8 @@ export const emptyFilteredHolder = (EmptyFilteredComponent, headerSize) => {
         {EmptyFilteredComponent ? (
           <EmptyFilteredComponent />
         ) : (
-          "Não foram encontrados resultados para o(s) filtro(s) aplicado(s)."
-        )}
+            "Não foram encontrados resultados para o(s) filtro(s) aplicado(s)."
+          )}
       </Styled.DefaultEmptyTableCell>
     </Styled.TableRow>
   );
