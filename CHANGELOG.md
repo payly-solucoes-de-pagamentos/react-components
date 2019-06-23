@@ -6,6 +6,12 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+##[0.3.0-beta]
+### Added
+  - Class to Button component
+  - Class to Balance component
+  - Stories of SentFeedback component
+
 ## [0.2.2-beta]
 ### Added
   - Add more stories of Table
