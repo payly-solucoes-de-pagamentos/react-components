@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import * as Styles from "./styles";
-import AlertTriangle from "./../Icons/alert-triangle";
+import AlertTriangle from "../Icons/alert-triangle";
 import { formatPrice, formatPriceWithouSymbol } from "../../helpers";
 import { FUNDS_LOW_PERCENTAGE } from "../../helpers/constants";
 import {
@@ -83,10 +83,12 @@ const Balance = React.memo(
 
     return (
       <>
-        <Styles.BalanceContainer>
-          <Styles.BalanceRow>
-            <Styles.BalanceColumn>
-              <Styles.Label>Saldo atual</Styles.Label>
+        <Styles.BalanceContainer className="pc-balance-container">
+          <Styles.BalanceRow className="pc-balance-Row">
+            <Styles.BalanceColumn className="pc-balance-columns">
+              <Styles.Label className="pc-balance-label">
+                Saldo atual
+              </Styles.Label>
               <Styles.Balance
                 show={!isLoading}
                 color={getCurrentBalanceColor()}
@@ -120,8 +122,10 @@ const Balance = React.memo(
               )}
             </Styles.MiddleAlertIcon>
 
-            <Styles.BalanceColumn>
-              <Styles.Label>Saldo agendado</Styles.Label>
+            <Styles.BalanceColumn className="pc-balance-columns">
+              <Styles.Label className="pc-balance-label">
+                Saldo agendado
+              </Styles.Label>
               <Styles.Balance
                 show={!isLoading}
                 color={getScheduledBalanceColor()}
@@ -132,7 +136,7 @@ const Balance = React.memo(
             </Styles.BalanceColumn>
           </Styles.BalanceRow>
 
-          <Styles.BalanceRow>
+          <Styles.BalanceRow className="pc-balance-Row">
             <Styles.BalanceIntervalContainer>
               <Select
                 isSearchable={false}

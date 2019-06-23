@@ -57,6 +57,7 @@ const ButtonComponent = props => {
 
   return (
     <Button
+      className="pc-button"
       bgColor={bgColor}
       color={color}
       outline={outline}
