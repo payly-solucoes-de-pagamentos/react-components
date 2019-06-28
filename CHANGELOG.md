@@ -6,6 +6,10 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+##[0.3.1-beta]
+### Fix
+  - Label colors
+
 ##[0.3.0-beta]
 ### Added
   - Class to Button component

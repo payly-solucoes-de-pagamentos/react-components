@@ -11,10 +11,18 @@ const renderDanger = text => {
   );
 };
 
-const Label = ({ children, Icon, IconColor, width, color, dangerText }) => {
+const Label = ({
+  children,
+  Icon,
+  IconColor,
+  width,
+  color,
+  dangerText,
+  background
+}) => {
   return (
     <Styles.Container>
-      <Styles.Label width={width} color={color}>
+      <Styles.Label width={width} color={color} background={background}>
         <Styles.IconContainer>
           {Icon && <Icon color={IconColor} size="12px" />}
         </Styles.IconContainer>
@@ -27,7 +35,8 @@ const Label = ({ children, Icon, IconColor, width, color, dangerText }) => {
 
 Label.propTypes = {
   children: PropTypes.string.isRequired,
-  IconColor: PropTypes.string,
+  background: PropTypes.string.isRequired,
+  IconColor: PropTypes.string.isRequired,
   dangerText: PropTypes.string,
   Icon: PropTypes.func,
   width: PropTypes.string,
@@ -35,7 +44,10 @@ Label.propTypes = {
 };
 
 Label.defaultProps = {
-  width: "100%"
+  width: "100%",
+  dangerText: undefined,
+  Icon: undefined,
+  color: "black"
 };
 
 export default Label;

@@ -8,7 +8,7 @@ export const Container = styled.div`
 
 export const Label = styled.div`
   height: 24px;
-  background: ${props => props.color};
+  background: ${props => props.background};
   width: ${props => props.width};
   color: ${props => props.color || theme.text.mainColor};
   border-radius: 22.5px;
