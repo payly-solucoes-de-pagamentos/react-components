@@ -15,4 +15,14 @@ storiesOf("Label")
     <Label IconColor="#008140" Icon={checked}>
       Checkado!
     </Label>
+  ))
+  .add("With a random icon and color", () => (
+    <Label
+      IconColor="#008140"
+      color="#008140"
+      background="black"
+      Icon={checked}
+    >
+      Cores diferentes
+    </Label>
   ));
