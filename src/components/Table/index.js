@@ -59,15 +59,15 @@ const Table = React.memo(
 
     return (
       <Styled.Container>
-        <Styled.CustomTable width={width}>
+        <Styled.CustomTable className="pc-table" width={width}>
           {loading && loaderHolder(loading.text, isEmpty)}
-          <Styled.TableHead show={!isEmpty}>
-            <Styled.TableHeadRow>
+          <Styled.TableHead className="pc-table-head" show={!isEmpty}>
+            <Styled.TableHeadRow className="pc-table-head-row">
               {headersComponents}
               {ActionComponent && actionHeader()}
             </Styled.TableHeadRow>
           </Styled.TableHead>
-          <Styled.TableBody>
+          <Styled.TableBody className="pc-table-body">
             {isEmpty && emptyHolderHandler}
             <TableRows
               data={tableData}

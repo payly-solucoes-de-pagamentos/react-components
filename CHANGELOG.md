@@ -6,6 +6,16 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 
 ## [Unreleased]
 
+##[0.4.0-beta]
+### Added
+  - Class to Table
+  - Class to Modal
+  - Class to Label
+  - Class to Checkbox
+  - Class to SentFeedback
+### Changes
+  - Prettify table stories
+
 ##[0.3.1-beta]
 ### Fix
   - Label colors

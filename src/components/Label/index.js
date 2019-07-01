@@ -21,9 +21,9 @@ const Label = ({
   background
 }) => {
   return (
-    <Styles.Container>
-      <Styles.Label width={width} color={color} background={background}>
-        <Styles.IconContainer>
+    <Styles.Container className="pc-label-container">
+      <Styles.Label className="pc-label" width={width} color={color} background={background}>
+        <Styles.IconContainer className="pc-label-icon-container" >
           {Icon && <Icon color={IconColor} size="12px" />}
         </Styles.IconContainer>
         {children}

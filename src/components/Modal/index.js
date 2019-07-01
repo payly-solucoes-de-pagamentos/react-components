@@ -21,11 +21,16 @@ const ModalComponent = React.memo(
 
     return (
       <Styles.BackgroundOverlay
+        className="pc-modal-overlay"
         id="modalOverlay"
         isOpen={isOpen}
         onClick={e => handleBgOverlayClick(e)}
       >
-        <Styles.ModalContainer width={width} height={height}>
+        <Styles.ModalContainer
+          className="pc-modal"
+          width={width}
+          height={height}
+        >
           {children}
         </Styles.ModalContainer>
       </Styles.BackgroundOverlay>
