@@ -30,6 +30,7 @@ export const TableRow = ({
   const [isMouseOnRow, setMouseOnRow] = useState(false);
   return (
     <Styled.TableRow
+      className="pc-table-body-row"
       loading={loading}
       striped={striped}
       key={`row-${index}`}
@@ -62,7 +63,11 @@ export const TableRow = ({
 export const TableCellAction = React.memo(
   ({ ActionComponent, index, isMouseOnRow, data }) => {
     return (
-      <Styled.TableCell key={`body-${index}-action`} textAlign="center">
+      <Styled.TableCell
+        className="pc-table-body-cell"
+        key={`body-${index}-action`}
+        textAlign="center"
+      >
         <ActionComponent
           key={`action-row-${index}`}
           isOpen={isMouseOnRow}
@@ -77,14 +82,17 @@ export const TableCell = ({ cell, index }) => {
   const Component = cell.component;
 
   return (
-    <Styled.TableCell key={`body-${index}-${cell.value}`}>
+    <Styled.TableCell
+      className="pc-table-body-cell"
+      key={`body-${index}-${cell.value}`}
+    >
       {Component ? (
         <Component />
       ) : typeof cell.value === "string" ? (
         stringLimitator(cell.value, 23)
       ) : (
-            cell.value
-          )}
+        cell.value
+      )}
     </Styled.TableCell>
   );
 };
@@ -93,7 +101,7 @@ export const loaderHolder = (loadingText, isEmpty) => {
   return (
     <Styled.LoadingTableContent hasHeader={!isEmpty}>
       <tr>
-        <Styled.TableCell textAlign="center">
+        <Styled.TableCell className="pc-table-loader" textAlign="center">
           <SentFeedback size="42px" strokeWidth="7" />{" "}
           <span>{loadingText}</span>
         </Styled.TableCell>
@@ -109,8 +117,8 @@ export const emptyHolder = (TableEmptyComponent, headerSize) => {
         {TableEmptyComponent ? (
           <TableEmptyComponent />
         ) : (
-            "Nenhum registro encontrado."
-          )}
+          "Nenhum registro encontrado."
+        )}
       </Styled.DefaultEmptyTableCell>
     </Styled.TableRow>
   );
@@ -123,8 +131,8 @@ export const emptyFilteredHolder = (EmptyFilteredComponent, headerSize) => {
         {EmptyFilteredComponent ? (
           <EmptyFilteredComponent />
         ) : (
-            "Não foram encontrados resultados para o(s) filtro(s) aplicado(s)."
-          )}
+          "Não foram encontrados resultados para o(s) filtro(s) aplicado(s)."
+        )}
       </Styled.DefaultEmptyTableCell>
     </Styled.TableRow>
   );

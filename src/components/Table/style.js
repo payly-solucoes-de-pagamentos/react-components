@@ -24,6 +24,7 @@ export const TableTitle = Styled.th`
   cursor: ${props => props.isSortable && "pointer"};
   background: transparent;
   padding: ${props => props.padding || "12px 5px"};
+  width: ${props => props.width};
   text-align: left;
   color: #a0a0a0;
   font-family: OpenSans, sans-serif;
@@ -34,6 +35,7 @@ export const TableTitle = Styled.th`
   line-height: normal;
   letter-spacing: normal;
   border: 0px;
+
 
   &:first-child {
     padding-left: 30px;

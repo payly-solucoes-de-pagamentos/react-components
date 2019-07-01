@@ -26,6 +26,7 @@ export const headersToComponent = (
   if (dataSample) {
     return dataSample.map((dataKey, i) => (
       <Styled.TableTitle
+        className="pc-table-head-cell"
         key={`header-${i}-${translateEnum[dataKey] || dataKey}`}
         width={translateEnum[dataKey].width || "15%"}
         onClick={() => sortData(dataKey)}
@@ -40,7 +41,12 @@ export const headersToComponent = (
 
 export const actionHeader = () => {
   return (
-    <Styled.TableTitle width="80px" padding="12px" key="action-header">
+    <Styled.TableTitle
+      className="pc-table-action"
+      width="80px"
+      padding="12px"
+      key="action-header"
+    >
       Ações
     </Styled.TableTitle>
   );

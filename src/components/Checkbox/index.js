@@ -61,8 +61,9 @@ const CustomCheckbox = styled.span`
 
 const CheckboxComp = ({ id, name, checked, onChange }) => {
   return (
-    <Container>
+    <Container className="pc-checkbox-container">
       <Checkbox
+        className="pc-checkbox"
         id={`check-${id}`}
         name={name}
         type="checkbox"
