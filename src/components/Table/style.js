@@ -114,7 +114,7 @@ export const LoadingTableContent = Styled.tbody`
   border-radius: 3px;
   width: 100%;
   height: calc(100% - ${props => (props.hasHeader ? "42px" : "0px")});
-  z-index: 10003;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
