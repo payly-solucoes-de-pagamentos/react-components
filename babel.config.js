@@ -5,7 +5,12 @@ module.exports = function(api) {
   const presets = ["@babel/preset-react", "minify", "@babel/preset-env"];
 
   const plugins = [
-    "babel-plugin-styled-components",
+    [
+      "babel-plugin-styled-components",
+      {
+        fileName: false
+      }
+    ],
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-proposal-class-properties"
   ];

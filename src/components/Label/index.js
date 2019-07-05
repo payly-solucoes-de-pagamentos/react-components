@@ -36,7 +36,7 @@ const Label = ({
 Label.propTypes = {
   children: PropTypes.string.isRequired,
   background: PropTypes.string.isRequired,
-  IconColor: PropTypes.string.isRequired,
+  IconColor: PropTypes.string,
   dangerText: PropTypes.string,
   Icon: PropTypes.func,
   width: PropTypes.string,
@@ -47,7 +47,8 @@ Label.defaultProps = {
   width: "100%",
   dangerText: undefined,
   Icon: undefined,
-  color: "black"
+  color: "black",
+  IconColor: ""
 };
 
 export default Label;
