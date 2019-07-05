@@ -4,7 +4,7 @@ import Label from "./index";
 
 describe("Label component", () => {
   it("should render the main button", () => {
-    const wrapper = shallow(<Label>Render</Label>);
+    const wrapper = shallow(<Label background="red">Render</Label>);
     expect(wrapper).toExist();
   });
 });

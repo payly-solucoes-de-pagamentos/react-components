@@ -20,7 +20,7 @@ describe("Modal component", () => {
   it("should be openned when pass active prop", () => {
     const wrapper = shallow(<Modal active />);
 
-    expect(wrapper.find("styles__BackgroundOverlay")).toHaveProp({
+    expect(wrapper.find("BackgroundOverlay")).toHaveProp({
       isOpen: true
     });
   });
@@ -29,13 +29,13 @@ describe("Modal component", () => {
     it("should be unique", () => {
       const wrapper = shallow(<Modal />);
 
-      expect(wrapper.find("styles__BackgroundOverlay").length).toBe(1);
+      expect(wrapper.find("BackgroundOverlay").length).toBe(1);
     });
 
     it("should start with closed", () => {
       const wrapper = shallow(<Modal />);
 
-      expect(wrapper.find("styles__BackgroundOverlay")).toHaveProp({
+      expect(wrapper.find("BackgroundOverlay")).toHaveProp({
         isOpen: false
       });
     });
@@ -43,7 +43,7 @@ describe("Modal component", () => {
     it("should close Modal on click", () => {
       const wrapper = shallow(<Modal />);
 
-      wrapper.find("styles__BackgroundOverlay").simulate("click", {
+      wrapper.find("BackgroundOverlay").simulate("click", {
         preventDefault: () => {},
         target: {
           id: {
@@ -53,7 +53,7 @@ describe("Modal component", () => {
       });
 
       expect(
-        wrapper.find("styles__BackgroundOverlay").prop("isOpen")
+        wrapper.find("BackgroundOverlay").prop("isOpen")
       ).toBeFalsy();
     });
   });
