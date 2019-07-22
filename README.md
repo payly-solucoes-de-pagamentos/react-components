@@ -61,4 +61,6 @@ class Example extends Component {
 - [Sinon](https://sinonjs.org/)
 - [Enzyme](https://airbnb.io/enzyme/)
 - [jest-enzyme](https://github.com/FormidableLabs/enzyme-matchers/tree/master/packages/jest-enzyme#readme)
+- [jest-styled-component](https://www.npmjs.com/package/jest-styled-components#tohavestylerule)
+- [enzyme-to-json](https://www.npmjs.com/package/enzyme-to-json)
 ##
