@@ -4,6 +4,12 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.5.1-beta]
+### Added
+  - Button: added box-shadow on focus
+### Fix
+  - Button: change icon color according to text
+
 ## [0.5.0-beta]
 ### Added
   - NPM Jest Styled Components
