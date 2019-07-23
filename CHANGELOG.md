@@ -4,13 +4,23 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.0-beta]
 ### Added
   - NPM Jest Styled Components
   - NPM enzyme-to-json
-  - Add more test to Button component
+  - More test to Button component
+  - Component Toast to lib
+  - Test to Toast component
+  - Story to Toast component
+  - Success color of request to lib theme
+  - Class names to Toast component
 ### Changes
   - Configs to not call styled component with prefixed filename in tests
+  - Add flex characteristic to fix an Icon box
+  - Imports change from errors to warnings in Eslint
+  - Refactor Toast component to undo unnecessary timeout
+  - Refactor style of Toast component to use theme of lib
+  - Create more stories of Toast component
 
 ### [0.4.1-beta]
 ### Fix
