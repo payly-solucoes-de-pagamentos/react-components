@@ -19,8 +19,19 @@ export const MainButton = styled.button`
   padding: 0px 20px 0px 20px;
   min-width: 130px;
   transition: all 0.2s ease;
+  svg {
+    max-height: 25px;
+    max-width: 25px;
+    margin-left: 5px;
+    g {
+      transition: all 0.2s ease;
+    }
+  }
 
-  :focus {outline:0;}
+  :focus {
+    outline:0;
+    box-shadow: 0 0 2pt 2pt rgba(100,100,100,0.2);
+  }
 
   &:disabled {
     cursor: not-allowed;
@@ -31,19 +42,23 @@ export const MainButton = styled.button`
   }
 
   &:hover:enabled {
-    border: 0px;
+    border-color: transparent;
     background: ${theme.button.backgroundMainHover};
     color: ${theme.button.colorFontMainHover};
+    svg > g {
+      stroke: ${theme.button.colorFontMainHover};
+    }
   }
 `;
 
 export const SecondaryButton = styled(MainButton)`
-  :focus {
-    outline: 0;
-  }
   background: ${theme.button.backgroundSecondary};
   color: ${theme.button.colorFontSecondary};
   border: ${theme.button.borderSecondary || "0px"};
+
+  svg > g {
+    stroke: ${theme.button.colorFontSecondary};
+  }
 `;
 
 export const IconButton = styled.img`
@@ -89,8 +104,8 @@ export const FileButton = styled.label`
     }
     return `
         &: hover {
-        background: ${theme.button.backgroundMainHover};
-        color: ${theme.button.colorFontMainHover};
+          background: ${theme.button.backgroundMainHover};
+          color: ${theme.button.colorFontMainHover};
         }
       `;
   }}
