@@ -1,14 +1,19 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import theme from '../../styles/theme';
 
 import RadioButton from '.';
+
+const cb = jest.fn();
+
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('RadioButton component', () => {
   it('should exist', () => {
     const wrapper = shallow(
-      <RadioButton name="wow" value="wow">
+      <RadioButton name="wow" value="wow" identifier="idTest">
         Teste
       </RadioButton>
     );
@@ -19,7 +24,7 @@ describe('RadioButton component', () => {
   describe('Component structure', () => {
     it('should have a container', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -29,7 +34,7 @@ describe('RadioButton component', () => {
 
     it('should have a Styled Radio input', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -39,7 +44,7 @@ describe('RadioButton component', () => {
 
     it('should have a Styled Radio Button', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -49,7 +54,7 @@ describe('RadioButton component', () => {
 
     it('should have a space for text', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -61,7 +66,7 @@ describe('RadioButton component', () => {
   describe('Radio style', () => {
     it('should have a radio input without display', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -74,7 +79,7 @@ describe('RadioButton component', () => {
 
     it('should have a label with radius and background with color white', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -90,7 +95,7 @@ describe('RadioButton component', () => {
 
     test('RadioHolder must have for attribute with same string as RadioInput', () => {
       const wrapper = shallow(
-        <RadioButton name="wow" identifier="idTest" value="wow">
+        <RadioButton name="wow" identifier="idTest" callback={cb}>
           Teste
         </RadioButton>
       );
@@ -108,7 +113,7 @@ describe('RadioButton component', () => {
 
     it('should render children inside Text component', () => {
       const wrapper = mount(
-        <RadioButton name="wow" value="wow">
+        <RadioButton name="wow" value="wow" identifier="idTest">
           Teste
         </RadioButton>
       );
@@ -118,7 +123,7 @@ describe('RadioButton component', () => {
 
     it('should render children inside Text component', () => {
       const wrapper = mount(
-        <RadioButton name="wow" identifier="idTest" value="wow">
+        <RadioButton name="wow" identifier="idTest" callback={cb}>
           <span>Woow</span>
         </RadioButton>
       );
@@ -129,22 +134,32 @@ describe('RadioButton component', () => {
     });
   });
   describe('Behavior block', () => {
-    it(`should change background of RadioHolder to ${theme.secondColor} when Radio is checked`, () => {
+    it('should check the radio button when click on label', () => {
       const wrapper = mount(
-        <RadioButton name="wow" identifier="idTest" value="wow">
-          Teste
+        <RadioButton name="wow" identifier="idTest" callback={cb}>
+          <span>Woow</span>
         </RadioButton>
       );
 
+      expect(wrapper.find('input').getDOMNode().checked).toBe(false);
       wrapper
-        .find('RadioInput')
-        .simulate('change', { target: { checked: true } });
+        .find('label')
+        .getDOMNode()
+        .click();
 
-      console.log('\n\n ======================');
-      console.log(toJson(wrapper.find('RadioInput').render()));
+      expect(wrapper.find('input').getDOMNode().checked).toBe(true);
+    });
 
-      const wrapperToJson = toJson(wrapper.find('RadioHolder').render());
-      expect(wrapperToJson).toHaveStyleRule('background', theme.secondColor);
+    it('should execute a callback when clicked', () => {
+      const wrapper = mount(
+        <RadioButton name="wow" identifier="idTest" callback={cb}>
+          <span>Woow</span>
+        </RadioButton>
+      );
+
+      wrapper.find('input').simulate('change', { target: { checked: true } });
+
+      expect(cb).toHaveBeenCalled();
     });
   });
 });
