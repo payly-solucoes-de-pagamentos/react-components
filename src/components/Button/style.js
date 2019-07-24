@@ -22,7 +22,6 @@ export const MainButton = styled.button`
   svg {
     max-height: 25px;
     max-width: 25px;
-    margin-left: 5px;
     g {
       transition: all 0.2s ease;
     }
@@ -45,7 +44,7 @@ export const MainButton = styled.button`
     border-color: transparent;
     background: ${theme.button.backgroundMainHover};
     color: ${theme.button.colorFontMainHover};
-    svg > g {
+    svg > * {
       stroke: ${theme.button.colorFontMainHover};
     }
   }
@@ -56,7 +55,7 @@ export const SecondaryButton = styled(MainButton)`
   color: ${theme.button.colorFontSecondary};
   border: ${theme.button.borderSecondary || "0px"};
 
-  svg > g {
+  svg > * {
     stroke: ${theme.button.colorFontSecondary};
   }
 `;
