@@ -7,7 +7,7 @@ import RadioButton from '../src/components/RadioButton';
 storiesOf('Radio button')
   .add('Default', () => (
     <div style={{ background: 'grey', paddingLeft: '15px' }}>
-      <RadioButton name="yup" identifier="t1" callback={() => alert('click')>
+      <RadioButton name="yup" identifier="t1" callback={() => alert('click')}>
         Click aqui
       </RadioButton>
     </div>
@@ -32,10 +32,19 @@ storiesOf('Radio button')
   ))
   .add('With two radios and default seted', () => (
     <div style={{ background: 'grey', paddingLeft: '15px' }}>
-      <RadioButton name="yup" identifier="t1" isDefault callback={() => alert('click no primeiro')}>
+      <RadioButton
+        name="yup"
+        identifier="t1"
+        isDefault
+        callback={() => alert('click no primeiro')}
+      >
         Click aqui
       </RadioButton>
-      <RadioButton name="yup" identifier="t2" callback={() => alert('click no segundo')}>
+      <RadioButton
+        name="yup"
+        identifier="t2"
+        callback={() => alert('click no segundo')}
+      >
         ou aqui
       </RadioButton>
     </div>
