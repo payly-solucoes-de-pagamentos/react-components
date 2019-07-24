@@ -9,6 +9,7 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
   - New component: RadioButton
   - Tests to RadioButton
   - Story to RadioButton
+  - Insert the RadioButton to exports list
 
 ## [0.5.0-beta]
 ### Added
