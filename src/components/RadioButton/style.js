@@ -32,5 +32,5 @@ export const RadioInput = Styled.input`
 `;
 
 export const Text = Styled.span`
-    padding: 10px;
+    padding-left: 10px;
   `;
