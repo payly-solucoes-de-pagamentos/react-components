@@ -59,7 +59,7 @@ describe('Toast component', () => {
   });
 
   describe('Style of toast', () => {
-    it(`should render with default props and style`, () => {
+    it('should render with default props and style', () => {
       const wrapper = shallow(
         <Toast closeAction={onCloseEvent} timer={1}>
           Teste

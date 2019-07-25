@@ -4,11 +4,17 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.5.1-beta]
-### Added
-  - Button: added box-shadow on focus
+## [0.6.1-beta]
 ### Fix
+  - Button: added box-shadow on focus
   - Button: change icon color according to text
+
+##[0.6.0-beta]
+### Added
+  - New component: RadioButton
+  - Tests to RadioButton
+  - Story to RadioButton
+  - Insert the RadioButton to exports list
 
 ## [0.5.0-beta]
 ### Added

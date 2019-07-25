@@ -7,3 +7,4 @@ export { default as Balance } from './components/Balance';
 export { default as Button } from './components/Button';
 export { default as Label } from './components/Label';
 export { default as Toast } from './components/Toast';
+export { default as RadioButton } from './components/RadioButton';
