@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import theme from '../src/styles/theme';
 
 import RadioButton from '../src/components/RadioButton';
 
