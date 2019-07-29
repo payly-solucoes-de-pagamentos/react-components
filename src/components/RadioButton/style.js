@@ -17,7 +17,7 @@ export const RadioHolder = Styled.span`
   display: block;
   border-radius: 35px;
   background: white;
-  border: 1px solid black;
+  border: theme.button.borderSecondary;
   transition: all 0.1s ease-in-out;
 `;
 
@@ -27,6 +27,7 @@ export const RadioInput = Styled.input`
     & + ${Box} {
       ${RadioHolder} {
         background: ${theme.secondColor};
+        border: none;
       }
     }
   }
