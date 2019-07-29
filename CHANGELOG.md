@@ -3,6 +3,11 @@
 Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [0.6.3-beta]
+###Fix
+  - Label no show Icon box when there has no Icon
+
 ## [0.6.2-beta]
 ###Changes
   - Border behaviot and style of RadioButton
