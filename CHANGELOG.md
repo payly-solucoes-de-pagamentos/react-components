@@ -3,6 +3,11 @@
 Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [0.6.5-beta]
+###Fix
+  - Make tooltip more customizible
+  - Create story to tooltip
+
 ## [0.6.4-beta]
 ###Fix
   - Wrong use of border in theme in RadioButton

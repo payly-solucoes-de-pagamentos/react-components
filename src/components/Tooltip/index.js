@@ -1,14 +1,26 @@
-import React from "react";
-import PropTypes from "prop-types";
-import * as Styles from "./style";
+import React from 'react';
+import PropTypes from 'prop-types';
+import theme from '../../styles/theme';
+import * as Styles from './style';
 
 const Tooltip = React.memo(
-  ({ Icon, message, iconColor, iconSize, bgColor, onClick }) => {
+  ({ Icon, children, iconColor, iconSize, bgColor, onClick, fontColor }) => {
     return (
-      <Styles.Container role="button" isActive={false} onClick={onClick}>
-        {Icon && <Icon color={iconColor} size={iconSize} />}
-        <Styles.Text bgColor={bgColor}>
-          <span>{message}</span>
+      <Styles.Container
+        className="pc-tooltip"
+        role="button"
+        isActive={false}
+        onClick={onClick}
+      >
+        {Icon && (
+          <Icon className="pc-tooltip-icon" color={iconColor} size={iconSize} />
+        )}
+        <Styles.Text
+          fontColor={fontColor}
+          className="pc-tooltip-text"
+          bgColor={bgColor}
+        >
+          <span>{children}</span>
         </Styles.Text>
       </Styles.Container>
     );
@@ -16,12 +28,21 @@ const Tooltip = React.memo(
 );
 
 Tooltip.propTypes = {
-  message: PropTypes.any,
-  Icon: PropTypes.func,
+  children: PropTypes.oneOfType(PropTypes.string, PropTypes.element).isRequired,
+  onClick: PropTypes.func.isRequired,
+  fontColor: PropTypes.string,
+  Icon: PropTypes.oneOfType(PropTypes.element, undefined),
   iconColor: PropTypes.string,
   iconSize: PropTypes.string,
   bgColor: PropTypes.string,
-  onClick: PropTypes.func
+};
+
+Tooltip.defaultProps = {
+  fontColor: 'white',
+  Icon: undefined,
+  iconColor: theme.secondColor,
+  iconSize: '17px',
+  bgColor: theme.button.backgroundMain,
 };
 
 export default Tooltip;

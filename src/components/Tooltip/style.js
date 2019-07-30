@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import { fontStyle } from "../../styles/mixins";
+import styled from 'styled-components';
+import { fontStyle } from '../../styles/mixins';
 
 export const Container = styled.div`
   position: relative;
   transition: visibility 0.2s linear, opacity 0.3s linear;
+  cursor: pointer;
   ${props =>
     props.isActive &&
     `
@@ -27,8 +28,9 @@ export const Text = styled.div`
   z-index: 1001;
   bottom: 30px;
   border-radius: 22.5px;
+  color: white;
   background: ${props => props.bgColor};
-  ${props => fontStyle(props.fontColor, "12px", 600)}
+  ${props => fontStyle(props.fontColor, '12px', 600)}
   text-align: center;
   white-space: nowrap;
   padding: 5px 16px;
@@ -36,7 +38,7 @@ export const Text = styled.div`
   left: 50%;
   transform: translateX(-50%);
   span {
-    ${props => fontStyle(props.fontColor, "12px", 600)}
+    ${props => fontStyle(props.fontColor, '12px', 600)}
     text-align: center;
   }
 
@@ -49,6 +51,6 @@ export const Text = styled.div`
     transform: translateX(-50%) rotate(132deg);
     bottom: -3px;
     z-index: -1;
-    content: "";
+    content: '';
   }
 `;
