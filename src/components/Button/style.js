@@ -51,6 +51,7 @@ export const MainButton = styled.button`
 `;
 
 export const SecondaryButton = styled(MainButton)`
+  font-size: 15px;
   background: ${theme.button.backgroundSecondary};
   color: ${theme.button.colorFontSecondary};
   border: ${theme.button.borderSecondary || "0px"};

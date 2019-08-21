@@ -12,7 +12,7 @@ export default {
     titleColor: '#808080',
   },
   button: {
-    fontSize: '15px',
+    fontSize: '16px',
     radius: '50px',
     backgroundMain: 'black',
     backgroundMainHover: '#ff4b69',
