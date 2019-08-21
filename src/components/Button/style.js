@@ -11,7 +11,7 @@ export const MainButton = styled.button`
   border-radius: ${theme.button.radius};
   ${fontStyle(
     theme.button.colorFontMain,
-    theme.text.fontFamily,
+    theme.button.fontSize,
     theme.text.fontWeight
   )}
   cursor: pointer;
