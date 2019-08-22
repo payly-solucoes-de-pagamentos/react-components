@@ -11,7 +11,7 @@ export const MainButton = styled.button`
   border-radius: ${theme.button.radius};
   ${fontStyle(
     theme.button.colorFontMain,
-    theme.text.fontFamily,
+    theme.button.fontSize,
     theme.text.fontWeight
   )}
   cursor: pointer;
@@ -51,6 +51,7 @@ export const MainButton = styled.button`
 `;
 
 export const SecondaryButton = styled(MainButton)`
+  font-size: 15px;
   background: ${theme.button.backgroundSecondary};
   color: ${theme.button.colorFontSecondary};
   border: ${theme.button.borderSecondary || "0px"};
