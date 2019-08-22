@@ -1,28 +1,28 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Label from "../src/components/Label";
+import Badge from "../src/components/Badge";
 import checked from "../src/components/Icons/checked";
 
-storiesOf("Label")
-  .add("Commom", () => <Label>Primary</Label>)
+storiesOf("Badge")
+  .add("Commom", () => <Badge>Primary</Badge>)
   .add("With danger text", () => (
-    <Label width="200px" dangerText="Error">
+    <Badge width="200px" dangerText="Error">
       Deu ruim
-    </Label>
+    </Badge>
   ))
   .add("With a random icon", () => (
-    <Label IconColor="#008140" Icon={checked}>
+    <Badge IconColor="#008140" Icon={checked}>
       Checkado!
-    </Label>
+    </Badge>
   ))
   .add("With a random icon and color", () => (
-    <Label
+    <Badge
       IconColor="#008140"
       color="#008140"
       background="black"
       Icon={checked}
     >
       Cores diferentes
-    </Label>
+    </Badge>
   ));

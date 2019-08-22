@@ -1,6 +1,6 @@
 import React from "react";
 import { formatDateSimple } from "../../../src/helpers/index";
-import Label from "../../../src/components/Label";
+import Badge from "../../../src/components/Badge";
 
 // Exemplo de função para parsear os lots
 const parseLotsToDataTable = lots => {
@@ -17,7 +17,7 @@ const parseLotsToDataTable = lots => {
             },
             notProcessed: {
               value: lot.qtdUnprocessed,
-              component: () => <Label dangerText>{lot.qtdUnprocessed}</Label>
+              component: () => <Badge dangerText>{lot.qtdUnprocessed}</Badge>
             },
             paymentDate: {
               value: lot.paymentPrevision,
@@ -27,7 +27,7 @@ const parseLotsToDataTable = lots => {
             },
             status: {
               value: lot.payableLotStatus,
-              component: () => <Label>Deu boa</Label>
+              component: () => <Badge>Deu boa</Badge>
             }
           };
         })
