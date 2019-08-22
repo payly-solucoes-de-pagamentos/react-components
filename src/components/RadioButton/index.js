@@ -32,12 +32,13 @@ RadioButton.propTypes = {
   name: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   identifier: PropTypes.string.isRequired,
-  callback: PropTypes.func.isRequired,
+  callback: PropTypes.func,
   isDefault: PropTypes.bool,
 };
 
 RadioButton.defaultProps = {
   isDefault: false,
+  callback: () => {},
 };
 
 export default RadioButton;

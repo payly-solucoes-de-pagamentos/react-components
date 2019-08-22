@@ -42,7 +42,7 @@ const Badge = ({
 
 Badge.propTypes = {
   children: PropTypes.string.isRequired,
-  background: PropTypes.string.isRequired,
+  background: PropTypes.string,
   IconColor: PropTypes.string,
   dangerText: PropTypes.string,
   Icon: PropTypes.func,
@@ -51,6 +51,7 @@ Badge.propTypes = {
 };
 
 Badge.defaultProps = {
+  background: 'none',
   width: '100%',
   dangerText: undefined,
   Icon: undefined,

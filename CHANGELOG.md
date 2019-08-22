@@ -4,9 +4,11 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.6.6-beta]
+## [0.7.0-beta]
 ### Changes
   - Update button font size
+  - Rename component Label to Badge
+  - RadioButton: make callback prop not required
 
 ## [0.6.5-beta]
 ###Fix
