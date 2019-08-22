@@ -11,7 +11,7 @@ const renderDanger = text => {
   );
 };
 
-const Label = ({
+const Badge = ({
   children,
   Icon,
   IconColor,
@@ -21,26 +21,26 @@ const Label = ({
   background,
 }) => {
   return (
-    <Styles.Container className="pc-label-container">
-      <Styles.Label
-        className="pc-label"
+    <Styles.Container className="pc-badge-container">
+      <Styles.Badge
+        className="pc-badge"
         width={width}
         color={color}
         background={background}
       >
         {Icon && (
-          <Styles.IconContainer className="pc-label-icon-container">
+          <Styles.IconContainer className="pc-badge-icon-container">
             <Icon color={IconColor} size="12px" />
           </Styles.IconContainer>
         )}
         {children}
-      </Styles.Label>
+      </Styles.Badge>
       {dangerText && renderDanger(dangerText)}
     </Styles.Container>
   );
 };
 
-Label.propTypes = {
+Badge.propTypes = {
   children: PropTypes.string.isRequired,
   background: PropTypes.string.isRequired,
   IconColor: PropTypes.string,
@@ -50,7 +50,7 @@ Label.propTypes = {
   color: PropTypes.string,
 };
 
-Label.defaultProps = {
+Badge.defaultProps = {
   width: '100%',
   dangerText: undefined,
   Icon: undefined,
@@ -58,4 +58,4 @@ Label.defaultProps = {
   IconColor: '',
 };
 
-export default Label;
+export default Badge;

@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow, render, mount } from "enzyme";
-import Label from "./index";
+import Badge from "./index";
 
-describe("Label component", () => {
+describe("Badge component", () => {
   it("should render the main button", () => {
-    const wrapper = shallow(<Label background="red">Render</Label>);
+    const wrapper = shallow(<Badge background="red">Render</Badge>);
     expect(wrapper).toExist();
   });
 });

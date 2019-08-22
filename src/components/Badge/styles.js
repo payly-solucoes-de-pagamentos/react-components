@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: row;
 `;
 
-export const Label = styled.div`
+export const Badge = styled.div`
   height: 24px;
   background: ${props => props.background};
   width: ${props => props.width};
