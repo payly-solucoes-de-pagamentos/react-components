@@ -17,6 +17,12 @@ const fileCharacteristic = {
 storiesOf('Buttons')
   .add('Main', () => <Button>Primary</Button>)
   .add('Secondary', () => <Button isSecondary>Secondary</Button>)
+  .add('Main disabled', () => <Button disabled>Primary</Button>)
+  .add('Secondary disabled', () => (
+    <Button isSecondary disabled>
+      Secondary <EditIcon />
+    </Button>
+  ))
   .add('Secondary with Icon', () => (
     <Button isSecondary>
       Secondary <EditIcon />

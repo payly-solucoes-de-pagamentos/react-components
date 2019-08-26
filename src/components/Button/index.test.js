@@ -21,6 +21,13 @@ describe("Button tests", () => {
     expect(wrapper).toExist();
   });
 
+  it("should call onClick function", () => {
+    const cb = jest.fn();
+    const wrapper = mount(<Button onClick={cb}>Testado</Button>);
+    wrapper.simulate('click');
+    expect(cb).toHaveBeenCalled();
+  });
+
   it("should render children", () => {
     const wrapper = render(<Button onClick={() => {}}>Testado</Button>);
     expect(wrapper.html()).toBe("Testado");
@@ -45,6 +52,20 @@ describe("Button tests", () => {
         "background",
         theme.button.backgroundSecondary
       );
+    });
+  });
+  describe("Disabled input", () => {
+    it("disabled button should not call onClick function", () => {
+      const cb = jest.fn();
+      const wrapper = mount(
+        <Button disabled onClick={cb}>
+          Testado
+        </Button>
+      );
+
+      wrapper.simulate('click');
+
+      expect(cb).not.toHaveBeenCalled();
     });
   });
 
