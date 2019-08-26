@@ -34,10 +34,7 @@ export const MainButton = styled.button`
 
   &:disabled {
     cursor: not-allowed;
-    border-color: ${GRAY_MEDIUM};
-    ${fontStyle("#FFF")}
-    background-color: ${theme.button.colorBackgroundDisabled};
-    font-weight: 600;
+    opacity: 0.15;
   }
 
   &:hover:enabled {
@@ -58,6 +55,10 @@ export const SecondaryButton = styled(MainButton)`
 
   svg > * {
     stroke: ${theme.button.colorFontSecondary};
+  }
+
+  &:disabled {
+    opacity: 0.3;
   }
 `;
 
