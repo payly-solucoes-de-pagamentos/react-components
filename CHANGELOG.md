@@ -6,7 +6,7 @@ O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 
 
 ## [0.7.1-beta]
 ### Changes
-  - Update style on disabled button
+  - Update style of disabled button
 
 ## [0.7.0-beta]
 ### Added
