@@ -4,6 +4,10 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.7.2-beta]
+### Fix
+  - Fix PropTypes Warnings
+
 ## [0.7.1-beta]
 ### Changes
   - Update style of disabled button

@@ -44,7 +44,7 @@ Badge.propTypes = {
   children: PropTypes.string.isRequired,
   background: PropTypes.string,
   IconColor: PropTypes.string,
-  dangerText: PropTypes.string,
+  dangerText: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   Icon: PropTypes.func,
   width: PropTypes.string,
   color: PropTypes.string,
