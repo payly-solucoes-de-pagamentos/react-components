@@ -17,7 +17,7 @@ const parseLotsToDataTable = lots => {
             },
             notProcessed: {
               value: lot.qtdUnprocessed,
-              component: () => <Badge dangerText>{lot.qtdUnprocessed}</Badge>
+              component: () => <Badge dangerText>{lot.qtdUnprocessed.toString()}</Badge>
             },
             paymentDate: {
               value: lot.paymentPrevision,

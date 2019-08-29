@@ -28,16 +28,17 @@ const Tooltip = React.memo(
 );
 
 Tooltip.propTypes = {
-  children: PropTypes.oneOfType(PropTypes.string, PropTypes.element).isRequired,
-  onClick: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  onClick: PropTypes.func,
   fontColor: PropTypes.string,
-  Icon: PropTypes.oneOfType(PropTypes.element, undefined),
+  Icon: PropTypes.element,
   iconColor: PropTypes.string,
   iconSize: PropTypes.string,
   bgColor: PropTypes.string,
 };
 
 Tooltip.defaultProps = {
+  onClick: () => {},
   fontColor: 'white',
   Icon: undefined,
   iconColor: theme.secondColor,

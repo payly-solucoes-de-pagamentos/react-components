@@ -77,7 +77,7 @@ const ButtonComponent = props => {
 };
 
 ButtonComponent.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.any,
   type: PropTypes.string,
   outline: PropTypes.bool,
@@ -95,6 +95,7 @@ ButtonComponent.propTypes = {
 };
 
 ButtonComponent.defaultProps = {
+  onClick: () => {},
   type: "button",
   children: "",
   disabled: false,
