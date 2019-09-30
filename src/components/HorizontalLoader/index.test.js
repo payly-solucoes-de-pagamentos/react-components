@@ -10,7 +10,7 @@ describe('Horizontal Loader component', () => {
   });
 
   describe('Component style', () => {
-    it('should have height', () => {
+    it('should have height equals 3px', () => {
       const wrapper = shallow(<HorizontalLoader height="3px" />);
       const horizontalLoader = toJson(wrapper.find('InternalLoader').render());
       expect(horizontalLoader).toHaveStyleRule('height', '3px');
