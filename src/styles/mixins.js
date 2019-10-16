@@ -59,3 +59,7 @@ export const column = () => `
   padding-top: 20px;
   height: auto;
 `;
+
+export const TransitionMixin = () => `
+  transition: all 0.3s ease-in;
+`;

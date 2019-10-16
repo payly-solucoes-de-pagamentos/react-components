@@ -1,6 +1,6 @@
 {
   "name": "payly-components",
-  "version": "0.7.2-beta",
+  "version": "0.8.0-beta",
   "description": "",
   "author": "",
   "license": "MIT",
@@ -41,6 +41,7 @@
     "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^5.1.4",
     "@svgr/rollup": "^4.3.0",
+    "@types/jest": "^24.0.18",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
@@ -118,6 +119,7 @@
     "moment": "^2.24.0",
     "react-dates": "^20.2.3",
     "react-moment-proptypes": "^1.6.0",
-    "react-select": "^3.0.4"
+    "react-select": "^3.0.4",
+    "styled-components": "^4.2.1"
   }
 }
