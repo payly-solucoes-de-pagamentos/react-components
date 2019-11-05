@@ -3,7 +3,9 @@ import * as Styled from "./style";
 import SentFeedback from "../SentFeedback";
 import { stringLimitator } from "../../helpers";
 
-export const TableRows = ({ data, ActionComponent, striped, loading }) => {
+export const TableRows = ({
+  data, ActionComponent, striped, loading, onRowClick,
+}) => {
   return (
     <>
       {data.map((info, i) => (
@@ -13,6 +15,7 @@ export const TableRows = ({ data, ActionComponent, striped, loading }) => {
           ActionComponent={ActionComponent}
           striped={striped}
           loading={loading}
+          onRowClick={onRowClick}
           key={`parent-row-${i}`}
         />
       ))}
@@ -25,6 +28,7 @@ export const TableRow = ({
   ActionComponent,
   loading,
   striped,
+  onRowClick,
   index
 }) => {
   const [isMouseOnRow, setMouseOnRow] = useState(false);
@@ -43,7 +47,9 @@ export const TableRow = ({
             <TableCell
               key={`row-cell-${infoKey}`}
               cell={info[infoKey]}
+              info={info}
               index={infoKey}
+              onRowClick={onRowClick}
             />
           )
       )}
@@ -78,13 +84,15 @@ export const TableCellAction = React.memo(
   }
 );
 
-export const TableCell = ({ cell, index }) => {
+export const TableCell = ({ info, cell, index, onRowClick }) => {
   const Component = cell.component;
 
   return (
     <Styled.TableCell
       className="pc-table-body-cell"
       key={`body-${index}-${cell.value}`}
+      onClick={() => onRowClick(info)}
+      cursorPointer={onRowClick.toString().substr(-2) !== '{}'}
     >
       {Component ? (
         <Component />

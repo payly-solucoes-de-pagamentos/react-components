@@ -14,54 +14,59 @@ const ActionComponent = ({ isOpen, data }) => {
   const editAction = () => {
     return (
       <Tooltip
-        message="Reagendar"
         Icon={CalendarSlin}
         iconColor="#4A4A4A"
         iconSize="16px"
         onClick={() => {}}
-      />
+      >
+        Reagendar
+      </Tooltip>
     );
   };
 
   const detailAction = () => (
     <Tooltip
-      message="Visualizar"
       Icon={Eye}
       iconColor="#4A4A4A"
       iconSize="16px"
       onClick={() => {}}
-    />
+    >
+     Visualizar
+    </Tooltip>
   );
 
   const cancelAction = () => (
     <Tooltip
-      message="Cancelar"
       Icon={XCirle}
       iconColor="#4A4A4A"
       iconSize="16px"
       onClick={() => {}}
-    />
+    >
+      Cancelar
+    </Tooltip>
   );
 
   const removeAction = () => (
     <Tooltip
-      message="excluir"
       Icon={TrashSlin}
       iconColor="#4A4A4A"
       iconSize="16px"
       onClick={() => {}}
-    />
+    >
+      Excluir
+    </Tooltip>
   );
 
   const downloadAction = () => {
     return (
       <Tooltip
-        message="Download"
         Icon={Download}
         iconColor="#4A4A4A"
         iconSize="16px"
         onClick={() => {}}
-      />
+      >
+        Download
+      </Tooltip>
     );
   };
 

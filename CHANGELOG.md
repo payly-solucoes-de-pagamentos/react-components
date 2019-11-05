@@ -4,6 +4,10 @@ Todas as alterações notáveis ao projeto devem ser documentadas neste arquivo.
 
 O formato é baseado em [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) e este projeto é aderente ao versionamento semântico [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.9.0-beta]
+### Added
+  - Table: added onRowClick property
+
 ## [0.8.0-beta]
 ### Added
   - New component: search
