@@ -2,11 +2,6 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Instalação
-  Importante salientar que é necessário adicionar à aplicação um arquivo **.npmrc** contendo as seguintes linhas
-
-  > registry=https://repo.devops.processing-cloud.internal.payly.com.br/repository/npm-public/
-  > authToken=NpmToken.32250e96-c0b3-3646-8912-8616ba4d9be8
-
 ```bash
 npm install --save payly-components-js
 ```
