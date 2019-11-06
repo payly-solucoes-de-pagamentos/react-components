@@ -33,6 +33,7 @@ const Table = React.memo(
     filtered,
     width,
     loading,
+    onRowClick,
     sorts
   }) => {
     const [tableData, setTableData] = useState(data);
@@ -74,6 +75,7 @@ const Table = React.memo(
               ActionComponent={ActionComponent}
               string={striped}
               loading={loading}
+              onRowClick={onRowClick}
               sortedBy={sortedBy}
             />
           </Styled.TableBody>
@@ -93,6 +95,7 @@ Table.propTypes = {
   width: PropType.string,
   loading: PropType.object,
   filtered: PropType.bool,
+  onRowClick: PropType.func,
   sorts: PropType.object
 };
 
@@ -101,6 +104,7 @@ Table.defaultProps = {
   striped: true,
   translateEnum: {},
   filtered: false,
+  onRowClick: () => {},
   sorts: {}
 };
 

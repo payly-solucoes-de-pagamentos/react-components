@@ -47,4 +47,17 @@ storiesOf("Table")
   ))
   .add("With loader", () => (
     <Table loading={loader} translateEnum={HEADERS_TABLE} />
+  ))
+  .add("Row with action on click", () => (
+    <Table
+      translateEnum={HEADERS_TABLE}
+      data={parseLotsToDataTable(tableMock)}
+      striped={false}
+      ActionComponent={ActionComponent}
+      width="100%"
+      onRowClick={row => {
+        console.log(row);
+        alert(row.id.value);
+      }}
+    />
   ));

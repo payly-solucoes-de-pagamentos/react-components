@@ -4,7 +4,7 @@ import Styled from 'styled-components';
 import theme from '../../styles/theme';
 
 const G = Styled.g`
-  fill: ${props => props.color || theme.secondColor}
+  fill: ${props => props.color || theme.secondColor};
 `;
 
 const Icon = ({ color, size }) => (

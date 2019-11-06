@@ -102,6 +102,7 @@ export const TableCell = Styled.td`
   font-size: 12px;
   border: 0px;
   font-weight: 600;
+  cursor: ${props => (props.cursorPointer ? 'pointer' : '')};
   &:first-child:not(:only-child) {
     padding-left: 30px;
   }

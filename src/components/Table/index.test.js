@@ -9,6 +9,8 @@ import {
   ActionComponent,
 } from '../../../__MOCKS__/Table/helpers';
 
+const cb = jest.fn();
+
 describe('Table component', () => {
   it('should render normal', () => {
     const wrapper = shallow(
@@ -56,6 +58,27 @@ describe('Table component', () => {
           .dive()
           .find('TableRow').length
       ).toEqual(8);
+    });
+  });
+
+  describe('Table with onRowClick', () => {
+    it('should execute onRowClick when click', () => {
+      const wrapper = mount(
+        <Table
+          translateEnum={HEADERS_TABLE}
+          data={parseLotsToDataTable(tableMock)}
+          striped={false}
+          ActionComponent={ActionComponent}
+          onRowClick={cb}
+        />
+      );
+
+      wrapper
+        .find('.pc-table-body-cell')
+        .first()
+        .simulate('click');
+
+      expect(cb).toHaveBeenCalled();
     });
   });
 });

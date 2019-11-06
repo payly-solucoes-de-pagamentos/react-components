@@ -31,7 +31,7 @@ Tooltip.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   onClick: PropTypes.func,
   fontColor: PropTypes.string,
-  Icon: PropTypes.element,
+  Icon: PropTypes.func,
   iconColor: PropTypes.string,
   iconSize: PropTypes.string,
   bgColor: PropTypes.string,
