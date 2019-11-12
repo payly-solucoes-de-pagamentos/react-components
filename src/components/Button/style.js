@@ -9,9 +9,9 @@ export const MainButton = styled.button`
   background: ${theme.button.backgroundMain};
   border: ${theme.button.borderMain || "0px"};
   border-radius: ${theme.button.radius};
-  ${fontStyle(
+  ${props => fontStyle(
     theme.button.colorFontMain,
-    theme.button.fontSize,
+    props.fontSize ? props.fontSize : theme.button.fontSize,
     theme.text.fontWeight
   )}
   cursor: pointer;
@@ -48,7 +48,7 @@ export const MainButton = styled.button`
 `;
 
 export const SecondaryButton = styled(MainButton)`
-  font-size: 15px;
+  font-size: ${props => props.fontSize ? props.fontSize : '15px'};
   background: ${theme.button.backgroundSecondary};
   color: ${theme.button.colorFontSecondary};
   border: ${theme.button.borderSecondary || "0px"};
