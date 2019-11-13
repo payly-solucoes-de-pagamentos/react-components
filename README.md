@@ -1,9 +1,9 @@
-# payly-components
+# react-components
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Instalação
 ```bash
-npm install --save payly-components-js
+npm i @payly/react-components
 ```
 
 ## Uso
@@ -11,7 +11,7 @@ npm install --save payly-components-js
 ```jsx
 import React, { Component } from "react";
 
-import { Modal } from "payly-components-js";
+import { Modal } from "@payly/react-components";
 
 class Example extends Component {
   render() {
