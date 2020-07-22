@@ -1,10 +1,13 @@
 {
   "name": "@payly/react-components",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "",
   "author": "",
   "license": "MIT",
-  "repository": "/payly-components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/payly-solucoes-de-pagamentos/react-components"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
